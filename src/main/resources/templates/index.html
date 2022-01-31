@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<style>
+table, th, td {
+  border:1px solid black;
+}
+</style>
+<head>
+<meta charset="ISO-8859-1">
+<title>Employee Management System</title>
+</head>
+<body>
+<div align="center">
+<h1>Employee Management System</h1>
+<a th:href="@{/createEmployees}">Add Employee</a>
+<table style="width:100%">
+<thead>
+<tr>
+<th>EmplyeeName</th>
+<th>EmployeeDepartment</th>
+<th>EmployeeEmail</th>
+<th>Action</th>
+</tr>
+</thead>
+<tbody>
+<tr th:each="employee : ${listofEmployees}">
+<td th:text = "${employee.name}"></td>
+<td th:text = "${employee.department}"></td>
+<td th:text = "${employee.email}"></td>
+<td><a th:href="@{/showFormForUpdate/{id}(id=${employee.id})}">Edit</a>
+<a th:href="@{/deleteEmployee/{id}(id=${employee.id})}">Delete</a></td>
+</tr>
+</tbody>
+</table>
+</div>
+</body>
+</html>

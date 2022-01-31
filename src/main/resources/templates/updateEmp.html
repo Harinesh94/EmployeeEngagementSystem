@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<form th:action="@{/saveEmployees}" method ="post" th:object ="${employees}">
+<input type="text" th:field ="*{id}" hidden="true"><br>
+<label for="name">Employee name:</label><br>
+  <input type="text" th:field ="*{name}"><br>
+  <label for=department>Department:</label><br>
+  <input type="text" th:field  ="*{department}"><br><br>
+  <label for=email>Email:</label><br>
+  <input type="text" th:field = "*{email}"><br><br>
+  <input type="submit" value="Submit">
+</form>
+</body>
+</html>
